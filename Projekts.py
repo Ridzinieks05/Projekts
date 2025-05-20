@@ -1,3 +1,4 @@
+// Magnuss Garais, Tišana Teilore
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -48,7 +49,7 @@ def get_viada_dizelis(url):
     soup = BeautifulSoup(driver.page_source, "html.parser")
     rows = soup.find_all("tr")
     if len(rows) >= 5:
-        cols = rows[4].find_all(["td", "th"])  # 5. rinda (indekss 4)
+        cols = rows[4].find_all(["td", "th"])  # 5. rinda
         if len(cols) >= 3:
             cena = cols[1].text.strip().replace(",", ".")
             vieta = cols[2].text.strip()
