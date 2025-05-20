@@ -35,7 +35,7 @@ def get_circlek_dizelis(url):
     soup = BeautifulSoup(driver.page_source, "html.parser")
     for row in soup.find_all("tr"):
         cols = row.find_all(["td", "th"])
-        # Precīzi meklē pēc "Dmiles" (ar lielo D)
+        # Precīzi meklē pēc "Dmiles"
         if len(cols) >= 3 and cols[0].text.strip() == "Dmiles":
             cena = cols[1].text.strip().replace(",", ".").replace(" EUR", "")
             vieta = cols[2].text.strip()
